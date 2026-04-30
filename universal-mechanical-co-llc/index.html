@@ -1,242 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <title>Universal Mechanical Co LLC â Williams Plumbing Services</title>
-<meta name="description" content="Williams, AZ&#39;s Trusted Choice for Plumbing and Mechanical Services">
+<meta name="description" content="Reliable Plumbing and Mechanical Work in Williams" />
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #0f172a; background: #f8fafc; }
-  a { text-decoration: none; color: inherit; }
-
-  /* Header */
-  .header { position: sticky; top: 0; z-index: 100; background: #0f172a; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
-  .header-logo { color: #fff; font-size: 1.15rem; font-weight: 700; letter-spacing: -.3px; }
-  .header-phone a { background: #1d4ed8; color: #fff; padding: 8px 18px; border-radius: 6px; font-weight: 600; font-size: .9rem; transition: background .2s; }
-  .header-phone a:hover { background: #1e3a8a; }
-
-  /* Hero */
-  .hero { background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 60%, #2563eb 100%); color: #fff; padding: 80px 24px 64px; text-align: center; }
-  .hero-rating { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); border-radius: 99px; padding: 6px 16px; margin-bottom: 24px; font-size: .9rem; }
-  .hero-rating .stars { color: #fbbf24; letter-spacing: 2px; }
-  .hero h1 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; line-height: 1.15; margin-bottom: 18px; }
-  .hero p { font-size: 1.1rem; color: rgba(255,255,255,.88); margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .hero-cta { display: inline-flex; align-items: center; gap: 10px; background: #fbbf24; color: #0f172a; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1.05rem; transition: background .2s; }
-  .hero-cta:hover { background: #f59e0b; }
-
-  /* Services */
-  .section { padding: 64px 24px; }
-  .section-inner { max-width: 1080px; margin: 0 auto; }
-  .section-title { font-size: 1.6rem; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
-  .section-sub { color: #64748b; margin-bottom: 40px; font-size: 1rem; }
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-  .service-card { background: #fff; border-radius: 12px; padding: 28px 24px; box-shadow: 0 1px 6px rgba(0,0,0,.08); border-top: 4px solid #1d4ed8; }
-  .service-icon { width: 44px; height: 44px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
-  .service-icon svg { width: 24px; height: 24px; fill: #1d4ed8; }
-  .service-card h3 { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
-  .service-card p { font-size: .92rem; color: #64748b; line-height: 1.55; }
-
-  /* About */
-  .about { background: #fff; }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-  @media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } }
-  .about-text p { color: #334155; line-height: 1.7; font-size: 1rem; margin-bottom: 20px; }
-  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .stat-box { background: #eff6ff; border-radius: 10px; padding: 20px; text-align: center; }
-  .stat-box .stat-num { font-size: 2rem; font-weight: 800; color: #1d4ed8; }
-  .stat-box .stat-label { font-size: .82rem; color: #64748b; margin-top: 4px; }
-
-  /* Reviews */
-  .reviews { background: #f1f5f9; }
-  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-  .review-card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
-  .review-stars { color: #fbbf24; font-size: 1.1rem; margin-bottom: 10px; }
-  .review-text { color: #334155; line-height: 1.65; font-size: .95rem; margin-bottom: 16px; }
-  .review-attribution { font-size: .82rem; color: #94a3b8; }
-
-  /* Contact */
-  .contact { background: #fff; }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-  @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
-  .contact-info h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; color: #0f172a; }
-  .contact-item { display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start; }
-  .contact-item-icon { width: 40px; height: 40px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .contact-item-icon svg { width: 20px; height: 20px; fill: #1d4ed8; }
-  .contact-item-text strong { display: block; font-size: .85rem; color: #64748b; margin-bottom: 2px; }
-  .contact-item-text span, .contact-item-text a { font-size: 1rem; color: #0f172a; font-weight: 500; }
-  .contact-map { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
-  .contact-map iframe { width: 100%; height: 300px; border: 0; display: block; }
-  .cta-form { margin-top: 28px; background: #eff6ff; border-radius: 12px; padding: 24px; }
-  .cta-form p { font-size: .95rem; color: #334155; margin-bottom: 16px; }
-  .cta-btn { display: block; width: 100%; text-align: center; background: #1d4ed8; color: #fff; padding: 14px; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: background .2s; }
-  .cta-btn:hover { background: #1e3a8a; }
-
-  /* Footer */
-  .footer { background: #0f172a; color: rgba(255,255,255,.7); padding: 32px 24px; text-align: center; font-size: .88rem; }
-  .footer a { color: #60a5fa; }
-  .footer-brand { margin-top: 10px; font-size: .8rem; color: rgba(255,255,255,.45); border-top: 1px solid rgba(255,255,255,.1); padding-top: 12px; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--blue:#1d4ed8;--blue-dark:#1e3a8a;--blue-light:#dbeafe;--charcoal:#0f172a;--slate:#334155;--slate-light:#64748b;--bg:#ffffff;--surface:#f8fafc;--border:#e2e8f0;--accent:#fbbf24}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,sans-serif;color:var(--charcoal);line-height:1.6;background:var(--bg)}
+  img{max-width:100%;display:block}
+  a{color:var(--blue);text-decoration:none}
+  .container{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 1px 2px rgba(15,23,42,.04)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:.85rem 0}
+  .brand{font-weight:800;font-size:1.05rem;color:var(--charcoal);letter-spacing:-.01em}
+  .nav-cta{background:var(--blue);color:#fff !important;padding:.6rem 1.1rem;border-radius:8px;font-weight:600;font-size:.95rem}
+  .hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);color:#fff;padding:5rem 0 5.5rem}
+  .hero-inner{position:relative;text-align:center;max-width:780px;margin:0 auto}
+  .hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:1rem}
+  .hero .tag{font-size:clamp(1.05rem,2vw,1.3rem);color:#dbeafe;margin-bottom:.75rem;font-weight:500}
+  .hero .sub{font-size:1.05rem;color:#cbd5e1;margin-bottom:2rem;max-width:620px;margin-left:auto;margin-right:auto}
+  .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 1.6rem;border-radius:10px;font-weight:700;font-size:1.05rem;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+  .btn-primary{background:var(--accent);color:var(--charcoal) !important}
+  .btn-ghost{background:rgba(255,255,255,.1);color:#fff !important;border:1.5px solid rgba(255,255,255,.3)}
+  .rating-pill{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.12);padding:.55rem 1rem;border-radius:999px;margin-top:1.5rem;font-size:.95rem;color:#fff;border:1px solid rgba(255,255,255,.2)}
+  .rating-stars{color:var(--accent);letter-spacing:1px}
+  section{padding:4.5rem 0}
+  .section-head{text-align:center;max-width:680px;margin:0 auto 3rem}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.25rem);color:var(--charcoal);font-weight:800;letter-spacing:-.02em;margin-bottom:.75rem}
+  .section-head p{color:var(--slate);font-size:1.05rem}
+  .eyebrow{display:inline-block;color:var(--blue);font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem}
+  #services{background:var(--surface)}
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+  .service-card{background:#fff;padding:1.75rem 1.5rem;border-radius:14px;border:1px solid var(--border)}
+  .service-icon{font-size:2.25rem;margin-bottom:.75rem}
+  .service-card h3{font-size:1.15rem;color:var(--charcoal);margin-bottom:.45rem;font-weight:700}
+  .service-card p{color:var(--slate);font-size:.95rem}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+  .about-text p{color:var(--slate);margin-bottom:1rem;font-size:1.05rem}
+  .about-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem}
+  .stat{background:var(--blue-light);padding:1.25rem;border-radius:12px;text-align:center}
+  .stat-num{font-size:1.8rem;font-weight:800;color:var(--blue-dark);line-height:1}
+  .stat-label{font-size:.85rem;color:var(--slate);margin-top:.35rem;font-weight:500}
+  .about-card{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);color:#fff;padding:2.5rem;border-radius:16px;text-align:center}
+  .about-card h3{font-size:1.4rem;margin-bottom:.75rem;font-weight:700}
+  .about-card p{color:#dbeafe;margin-bottom:1.25rem}
+  #reviews{background:var(--surface)}
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-top:1rem}
+  .review-card{background:#fff;padding:1.75rem;border-radius:14px;border:1px solid var(--border)}
+  .review-stars{color:var(--accent);font-size:1rem;margin-bottom:.75rem;letter-spacing:1px}
+  .review-text{color:var(--slate);font-style:italic;line-height:1.65}
+  .review-source{margin-top:1rem;font-size:.85rem;color:var(--slate-light);font-weight:500}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+  .contact-info h3{font-size:1.2rem;color:var(--charcoal);margin-bottom:1rem;font-weight:700}
+  .contact-row{display:flex;align-items:flex-start;gap:.85rem;padding:1rem 0;border-bottom:1px solid var(--border)}
+  .contact-row:last-of-type{border-bottom:none}
+  .contact-icon{font-size:1.4rem;flex-shrink:0;width:2.5rem;height:2.5rem;background:var(--blue-light);border-radius:8px;display:flex;align-items:center;justify-content:center}
+  .contact-label{font-size:.8rem;color:var(--slate-light);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.15rem}
+  .contact-val{color:var(--charcoal);font-weight:600;font-size:1.05rem}
+  .contact-val a{color:var(--charcoal)}
+  .contact-form{background:var(--surface);padding:2rem;border-radius:14px}
+  .contact-form h3{margin-bottom:1.25rem;color:var(--charcoal);font-weight:700}
+  .form-field{margin-bottom:1rem}
+  .form-field label{display:block;font-size:.85rem;color:var(--slate);font-weight:600;margin-bottom:.4rem}
+  .form-field input,.form-field textarea{width:100%;padding:.75rem .9rem;border:1px solid var(--border);border-radius:8px;font-family:inherit;font-size:.95rem;background:#fff}
+  .form-field textarea{min-height:90px;resize:vertical}
+  .form-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:.95rem;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer}
+  .map-wrap{margin-top:2rem;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+  .map-wrap iframe{display:block;width:100%;height:340px;border:0}
+  footer{background:var(--charcoal);color:#cbd5e1;padding:2.5rem 0 1.5rem;text-align:center}
+  footer .biz-name{color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.25rem}
+  footer .biz-loc{color:#94a3b8;font-size:.95rem;margin-bottom:1.25rem}
+  .demo-banner{background:#fbbf24;color:#0f172a;padding:.75rem 1rem;border-radius:8px;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:.6rem;margin-top:.5rem;flex-wrap:wrap;justify-content:center}
+  .demo-banner a{color:var(--blue-dark);text-decoration:underline;font-weight:700}
+  .copyright{margin-top:1.5rem;font-size:.85rem;color:#64748b}
 </style>
 </head>
 <body>
-
-<!-- Sticky Header -->
-<header class="header">
-  <div class="header-logo">Universal Mechanical Co LLC</div>
-  <div class="header-phone"><a href="tel:+19286354702">(928) 635-4702</a></div>
+<header>
+  <div class="container nav">
+    <div class="brand">Universal Mechanical Co LLC</div>
+    <a href="tel:9286354702" class="nav-cta">ð (928) 635-4702</a>
+  </div>
 </header>
-
-<!-- Hero -->
-<section class="hero">
-  <div class="hero-rating">
-    <span class="stars">âââââ</span>
-    <span>5-Star Rating Â· 1 Google Review</span>
-  </div>
-  <h1>Williams, AZ&#39;s Trusted Choice for Plumbing and Mechanical Services</h1>
-  <p>Trusted plumbing and mechanical services in Williams, AZ â call (928) 635-4702 today.</p>
-  <a href="tel:+19286354702" class="hero-cta">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-    Call Now: (928) 635-4702
-  </a>
-</section>
-
-<!-- Services -->
-<section class="section">
-  <div class="section-inner">
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-sub">From plumbing repairs to full mechanical installations, Universal Mechanical Co LLC offers a range of services to meet your needs in Williams, AZ.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c.39 0 .77.02 1.15.07L12 2v2.03c-4.39.5-7.79 4.21-7.98 8.59C4.04 17.14 7.72 21 12 21c4.42 0 8-3.58 8-8 0-1.28-.3-2.49-.84-3.56L21 8.18V12z"/><path d="M12 4V2c-1.1 0-2.16.16-3.16.46L10 4.13C10.64 4.05 11.31 4 12 4z"/></svg></div>
-        <h3>Drain Cleaning</h3>
-        <p>Fast, effective drain clearing for residential and commercial properties. Clogged drains are no match for our team.</p>
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Universal Mechanical Co LLC</h1>
+      <p class="tag">Reliable Plumbing and Mechanical Work in Williams</p>
+      <p class="sub">Contact Universal Mechanical Co LLC in Williams to get reliable plumbing help today.</p>
+      <div class="cta-row">
+        <a href="tel:9286354702" class="btn btn-primary">ð Call (928) 635-4702</a>
+        <a href="#services" class="btn btn-ghost">View Services</a>
       </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg></div>
-        <h3>Water Heater Service</h3>
-        <p>Installation, repair, and replacement of water heaters â traditional and tankless â to keep your hot water flowing.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
-        <h3>Emergency Plumbing</h3>
-        <p>Plumbing emergencies don't wait. Call us for prompt response to burst pipes, leaks, and urgent mechanical failures.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></div>
-        <h3>Leak Detection</h3>
-        <p>Pinpoint hidden leaks before they cause major damage. We use proven methods to locate and repair leaks quickly.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></div>
-        <h3>Toilet &amp; Faucet Repair</h3>
-        <p>From running toilets to dripping faucets, we handle all fixture repairs and replacements with care.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 14H5c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h14c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1z"/><path d="M8 15h8v-2H8v2zm0-4h8V9H8v2z"/></svg></div>
-        <h3>Re-Pipe Services</h3>
-        <p>Full and partial re-piping solutions to replace aging or damaged pipe systems in your home or business.</p>
-      </div>
+      
+        <div class="rating-pill">
+          <span class="rating-stars" aria-hidden="true">âââââ</span>
+          <span class="rating-text">â 5.0 on Google â¢ 1 review</span>
+        </div>
     </div>
-  </div>
-</section>
-
-<!-- About -->
-<section class="section about">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-text">
-        <h2 class="section-title">About Universal Mechanical Co LLC</h2>
-        <p>Universal Mechanical Co LLC is a plumbing and mechanical contractor serving the Williams, AZ community. Based locally at 593 Carol Dr, our team is committed to delivering reliable, quality workmanship on every job. When you need mechanical or plumbing services in Williams, we are here to help.</p>
-        <p>Located in the heart of Williams, we serve local homeowners and businesses with the same level of dedication on every call. Give us a call at <a href="tel:+19286354702" style="color:#1d4ed8;font-weight:600;">(928) 635-4702</a> to discuss your needs.</p>
+  </section>
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What We Do</span>
+        <h2>Plumbing Services in Williams</h2>
+        <p>Universal Mechanical Co LLC offers a range of plumbing and mechanical services in Williams.</p>
       </div>
-      <div class="about-stats">
-        <div class="stat-box">
-          <div class="stat-num">5.0</div>
-          <div class="stat-label">Google Rating</div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">ð¿</div>
+          <h3>Drain Cleaning</h3>
+          <p>Clear clogged sinks, tubs, and main lines fast.</p>
         </div>
-        <div class="stat-box">
-          <div class="stat-num">1</div>
-          <div class="stat-label">Google Review</div>
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">ð¥</div>
+          <h3>Water Heater Install &amp; Repair</h3>
+          <p>Tank and tankless installation, replacement, and service.</p>
         </div>
-        <div class="stat-box">
-          <div class="stat-num">24/7</div>
-          <div class="stat-label">Emergency Availability</div>
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">ð¨</div>
+          <h3>Emergency Repair</h3>
+          <p>Burst pipes, sewer backups, no-water emergencies.</p>
         </div>
-        <div class="stat-box">
-          <div class="stat-num">Local</div>
-          <div class="stat-label">Williams Based</div>
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">ð§</div>
+          <h3>Leak Detection</h3>
+          <p>Find hidden leaks before they become major damage.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">ð½</div>
+          <h3>Toilet &amp; Faucet Service</h3>
+          <p>Repairs, replacements, and fixture upgrades.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">ð </div>
+          <h3>Re-Pipe &amp; Remodels</h3>
+          <p>Whole-home repipes and bathroom/kitchen plumbing.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Reviews -->
-<section class="section reviews">
-  <div class="section-inner">
-    <h2 class="section-title">What Customers Are Saying</h2>
-    <p class="section-sub">Based on Google reviews for Universal Mechanical Co LLC</p>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">âââââ</div>
-        <p class="review-text">"Customers are giving Universal Mechanical Co LLC a 5-star rating on Google â a reflection of the quality and care delivered on every visit."</p>
-        <div class="review-attribution">â Verified Google Customer</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">âââââ</div>
-        <p class="review-text">"With a perfect 5-star score on Google, Universal Mechanical Co LLC has earned the satisfaction of the customers it has served in Williams, AZ."</p>
-        <div class="review-attribution">â Verified Google Customer</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section class="section contact">
-  <div class="section-inner">
-    <h2 class="section-title">Contact Us</h2>
-    <p class="section-sub">Ready to help with your plumbing and mechanical needs in Williams</p>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3>Get in Touch</h3>
-        <div class="contact-item">
-          <div class="contact-item-icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></div>
-          <div class="contact-item-text">
-            <strong>Phone</strong>
-            <a href="tel:+19286354702">(928) 635-4702</a>
+  </section>
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="eyebrow">About Us</span>
+          <h2 style="font-size:clamp(1.6rem,3vw,2.25rem);color:var(--charcoal);font-weight:800;letter-spacing:-.02em;margin-bottom:1rem">Local plumbing you can count on</h2>
+          <p>Universal Mechanical Co LLC is a construction and plumbing company serving Williams and the surrounding area. We focus on reliable mechanical work and straightforward service. Reach us directly at (928) 635-4702 to discuss your project needs.</p>
+          <div class="about-stats">
+            <div class="stat"><div class="stat-num">5.0 â</div><div class="stat-label">Google Rating</div></div>
+            <div class="stat"><div class="stat-num">1</div><div class="stat-label">Customer Review</div></div>
           </div>
         </div>
-        <div class="contact-item">
-          <div class="contact-item-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
-          <div class="contact-item-text">
-            <strong>Address</strong>
-            <span>593 Carol Dr, Williams, AZ 86046</span>
-          </div>
-        </div>
-        <div class="cta-form">
-          <p>Ready to schedule service? Give us a call â we are standing by to help with any plumbing or mechanical need.</p>
-          <a href="tel:+19286354702" class="cta-btn">Call (928) 635-4702</a>
-        </div>
-      </div>
-      <div>
-        <div class="contact-map">
-          <iframe
-            src="https://maps.google.com/maps?q=593%20Carol%20Dr%2C%20Williams%2C%20AZ%2086046&output=embed"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+        <div class="about-card">
+          <h3>Need a plumber today?</h3>
+          <p>Call now to book service, get a quote, or schedule emergency repair.</p>
+          <a href="tel:9286354702" class="btn btn-primary">ð (928) 635-4702</a>
         </div>
       </div>
     </div>
+  </section>
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Social Proof</span>
+        <h2>What customers are saying</h2>
+        <p>Based on 1 review and a 5.0-star Google rating.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">âââââ</div>
+          <p class="review-text">Our most recent reviewer awarded a 5-star rating, reflecting a positive experience with the work completed.</p>
+          <p class="review-source">â Summary of Google reviews</p>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">âââââ</div>
+          <p class="review-text">Early customers note that Universal Mechanical Co LLC approached the job with professionalism and clear communication.</p>
+          <p class="review-source">â Summary of Google reviews</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Get in Touch</span>
+        <h2>Contact Universal Mechanical Co LLC</h2>
+        <p>Call for fastest service, or send a message and we'll get back to you.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Reach us</h3>
+          <div class="contact-row">
+            <div class="contact-icon" aria-hidden="true">ð</div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-val"><a href="tel:9286354702">(928) 635-4702</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon" aria-hidden="true">ð</div>
+            <div>
+              <div class="contact-label">Address</div>
+              <div class="contact-val">593 Carol Dr, Williams, AZ 86046</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon" aria-hidden="true">ð</div>
+            <div>
+              <div class="contact-label">Hours</div>
+              <div class="contact-val">Call for current hours</div>
+            </div>
+          </div>
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps?q=593%20Carol%20Dr%2C%20Williams%2C%20AZ%2086046&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Universal Mechanical Co LLC"></iframe>
+          </div>
+        </div>
+        <form class="contact-form" action="tel:9286354702" onsubmit="event.preventDefault();window.location='tel:9286354702';">
+          <h3>Request service</h3>
+          <div class="form-field">
+            <label for="cf-name">Your name</label>
+            <input id="cf-name" name="name" type="text" placeholder="Jane Smith" />
+          </div>
+          <div class="form-field">
+            <label for="cf-phone">Phone</label>
+            <input id="cf-phone" name="phone" type="tel" placeholder="(555) 555-5555" />
+          </div>
+          <div class="form-field">
+            <label for="cf-msg">How can we help?</label>
+            <textarea id="cf-msg" name="message" placeholder="Briefly describe the plumbing issue..."></textarea>
+          </div>
+          <button class="form-submit" type="submit">Call (928) 635-4702</button>
+          <p style="font-size:.8rem;color:var(--slate-light);margin-top:.65rem;text-align:center">For fastest response, call directly.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container">
+    <div class="biz-name">Universal Mechanical Co LLC</div>
+    <div class="biz-loc">593 Carol Dr, Williams, AZ 86046 â¢ (928) 635-4702</div>
+    <div class="demo-banner">
+      ð¨ Demo built by <strong>Desert Hills Web Development</strong> â <a href="tel:9286354702">Call to claim your site</a>
+    </div>
+    <div class="copyright">Â© Universal Mechanical Co LLC â¢ Demo preview, not a live business website</div>
   </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <p>&copy; 2024 Universal Mechanical Co LLC Â· 593 Carol Dr, Williams, AZ 86046 Â· <a href="tel:+19286354702">(928) 635-4702</a></p>
-  <div class="footer-brand">Demo built by Desert Hills Web Development â Call to claim your site</div>
 </footer>
-
 </body>
 </html>
